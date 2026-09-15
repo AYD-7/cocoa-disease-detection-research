@@ -1,0 +1,92 @@
+{
+  "dataset_name": "Cocoa Disease Detection Dataset",
+  "version": "1.0",
+  "description": "A combined cocoa leaf object-detection dataset assembled from the KaraAgroAI Cocoa Dataset and a public Roboflow Cocoa dataset for cocoa disease detection research.",
+  "task": "Object Detection",
+  "classes": {
+    "0": "anthracnose",
+    "1": "cssvd",
+    "2": "healthy"
+  },
+  "class_descriptions": {
+    "anthracnose": "Cocoa leaf affected by anthracnose.",
+    "cssvd": "Cocoa leaf affected by Cocoa Swollen Shoot Virus Disease.",
+    "healthy": "Healthy cocoa leaf."
+  },
+  "dataset_sources": [
+    {
+      "name": "The KaraAgroAI Cocoa Dataset",
+      "doi": "10.7910/DVN/BBGQSP",
+      "license": "CC0 1.0",
+      "source_type": "Harvard Dataverse"
+    },
+    {
+      "name": "Roboflow Cocoa Dataset",
+      "workspace": "sam-k3mhv",
+      "project": "cocoa-zgish",
+      "version": 1,
+      "license": "CC BY 4.0"
+    }
+  ],
+  "statistics": {
+    "total_images": 5583,
+    "total_annotations": 13289,
+    "image_level_classes": {
+      "healthy": 4635,
+      "anthracnose": 682,
+      "cssvd": 265
+    },
+    "annotation_level_classes": {
+      "anthracnose": 804,
+      "cssvd": 423,
+      "healthy": 12062
+    },
+    "split_image_counts": {
+      "train": 3908,
+      "valid": 1116,
+      "test": 559
+    },
+    "source_image_counts": {
+      "KaraAgroAI Cocoa Dataset": 4596,
+      "Roboflow Cocoa": 987
+    }
+  },
+  "split": {
+    "strategy": "Image-level stratified split",
+    "train": "70%",
+    "validation": "20%",
+    "test": "10%",
+    "random_seed": 42
+  },
+  "annotation_format": "YOLO",
+  "image_format": "JPG",
+  "quality_control": {
+    "image_label_pairs_verified": true,
+    "invalid_yolo_annotations": 0,
+    "corrupt_images": 0,
+    "exact_duplicate_images_after_merge": 0,
+    "missing_labels_after_final_split": 0,
+    "excluded_karaagroai_images": 81,
+    "excluded_karaagroai_reason": {
+      "missing_image": 79,
+      "no_valid_bounding_box": 2
+    }
+  },
+  "preprocessing": [
+    "Pascal VOC XML annotations from KaraAgroAI were converted to YOLO format.",
+    "Roboflow YOLO annotations were retained in YOLO format.",
+    "Class labels were normalized to anthracnose, cssvd, and healthy.",
+    "Exact image duplicates were checked using SHA-256.",
+    "Dataset was split at image level to prevent annotation leakage."
+  ],
+  "files": {
+    "images_metadata": "cleaned_data.csv",
+    "dataset_config": "data.yaml",
+    "train_images": "train/images",
+    "train_labels": "train/labels",
+    "validation_images": "valid/images",
+    "validation_labels": "valid/labels",
+    "test_images": "test/images",
+    "test_labels": "test/labels"
+  }
+}

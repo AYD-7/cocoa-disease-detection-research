@@ -1,0 +1,33 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw datasets
+data/raw/
+
+# Large processed datasets
+data/processed/combined/
+data/processed/final/train/
+data/processed/final/valid/
+data/processed/final/test/
+
+# Training outputs
+notebooks/runs/
+runs/
+
+# Temporary/test downloads
+*.tmp
+roboflow_test
+cocoa.v1i.yolov8.zip
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Large converted KaraAgroAI dataset
+data/processed/karaagroai_yolo/

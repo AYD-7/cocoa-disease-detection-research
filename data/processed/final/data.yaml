@@ -1,0 +1,11 @@
+path: /home/l2e_ayd/cocoa_research/data/processed/final
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 3
+names:
+  0: anthracnose
+  1: cssvd
+  2: healthy
